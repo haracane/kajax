@@ -24,7 +24,7 @@ class Float
   def method_missing(method_id, *args, &block)
     method_id = method_id.to_s
     if method_id =~ /^to_([fp])(\d+)$/ then
-      return ExtendPatch::CoreExtensions::Float::Conversions.format_convert(self, $1, $2.to_i)
+      return FloatExtensions::Float::Conversions.format_convert(self, $1, $2.to_i)
     else
       return super
     end

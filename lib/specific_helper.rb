@@ -1,5 +1,6 @@
 # SpecificHelper
 module SpecificHelper
+  autoload :Generate, 'specific_helper/generate'
   module ControllerActionMethodCaller
     def call_controller_action_method(spec)
       self.send(spec.to_s.gsub(/controller_action/, "#{params[:controller]}_#{params[:action]}"))
@@ -42,15 +43,10 @@ module SpecificHelper
   end
 end
 
-def to_camel_case
-  return self.classify
-end
-
-
-class ActionController::Base
-  include SpecificHelper::ActionControllerExtensions::BaseMethods
-end
-
-class ActionView::Base
-  include SpecificHelper::ActionViewExtensions::BaseMethods
-end
+# class ActionController::Base
+  # include SpecificHelper::ActionControllerExtensions::BaseMethods
+# end
+# 
+# class ActionView::Base
+  # include SpecificHelper::ActionViewExtensions::BaseMethods
+# end

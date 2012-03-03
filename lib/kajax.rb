@@ -1,12 +1,11 @@
-$:.push File.expand_path('../', __FILE__)
+$:.push File.expand_path(File.dirname(__FILE__))
 
 require 'rubygems'
 
 autoload :ArrayOfHash, 'array_of_hash'
 autoload :CassandraUtil, 'cassandra_util'
-autoload :DateUtil, 'date_util'
 autoload :DbEscape, 'db_escape'
-autoload :GoogleDataApi, 'google_data_api'
+autoload :GoogleDataAPI, 'google_data_api'
 autoload :HadoopUtil, 'hadoop_util'
 autoload :KeywordAliasUtil, 'keyword_alias_util'
 autoload :Md5Convert, 'md5_convert'
@@ -16,7 +15,6 @@ autoload :PgHdfs, 'pg_hdfs'
 autoload :PgsqlUtil, 'pgsql_util'
 autoload :PostfixConvert, 'postfix_convert'
 autoload :RspecUtil, 'rspec_util'
-autoload :SpecificHelper, 'specific_helper'
 autoload :SpecifixXmlConverter, 'specific_xml_converter'
 autoload :SqlUtil, 'sql_util'
 autoload :TwitterThumbnailExtractor, 'twitter_thumbnail_extractor'
@@ -26,8 +24,10 @@ require 'action_controller_extensions'
 require 'action_view_extensions'
 require 'active_record_extensions'
 require 'array_extensions'
+require 'date_extensions'
 require 'float_extensions'
 require 'hash_extensions'
 require 'string_extensions'
 require 'symbol_extensions'
+# require 'specific_helper'
 

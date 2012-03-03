@@ -112,48 +112,48 @@ module SqlUtil
   end
   
   def self.select_sql(table_name, options)
-    return <<EOF
+    return <<-EOF
       select #{SqlUtil.select_values_sql(options[:select])}
       from #{table_name}
       #{SqlUtil.where_sql(options[:conditions])}
       #{SqlUtil.order_by_sql(options[:order])}
       #{SqlUtil.limit_offset_sql(options[:limit], options[:offset])}
-EOF
+    EOF
   end
 
   def self.count_sql(table_name, options)
-    return <<EOF
-    select count(*) from (
-      select #{SqlUtil.select_values_sql(options[:select])}
-      from #{table_name}
-      #{SqlUtil.where_sql(options[:conditions])}
-      #{SqlUtil.limit_offset_sql(options[:limit], options[:offset])}
-    ) as alias
-EOF
+    return <<-EOF
+      select count(*) from (
+        select #{SqlUtil.select_values_sql(options[:select])}
+        from #{table_name}
+        #{SqlUtil.where_sql(options[:conditions])}
+        #{SqlUtil.limit_offset_sql(options[:limit], options[:offset])}
+      ) as alias
+    EOF
   end
 
 end
 
 
-module ArrayOfHash
-  def self.split_records_by(records, key_list)
-    ret = {}
-    if records && key_list then
-      if ! key_list.is_a? Array then
-        key_list = [key_list]
-      end
-      records.each do |record|
-        val_list = record.values_at *key_list
-        last_val = val_list.pop
-        hash = ret
-        val_list.each do |key|
-          hash = ret[key] ||= {}
-        end
-        hash[last_val] ||= []
-        hash[last_val].push record
-      end
-    end
-    return ret
-  end
-end
-
+# module ArrayOfHash
+  # def self.split_records_by(records, key_list)
+    # ret = {}
+    # if records && key_list then
+      # if ! key_list.is_a? Array then
+        # key_list = [key_list]
+      # end
+      # records.each do |record|
+        # val_list = record.values_at *key_list
+        # last_val = val_list.pop
+        # hash = ret
+        # val_list.each do |key|
+          # hash = ret[key] ||= {}
+        # end
+        # hash[last_val] ||= []
+        # hash[last_val].push record
+      # end
+    # end
+    # return ret
+  # end
+# end
+# 
