@@ -29,5 +29,5 @@ require 'float_extensions'
 require 'hash_extensions'
 require 'string_extensions'
 require 'symbol_extensions'
-# require 'specific_helper'
+require 'specific_helper'
 
