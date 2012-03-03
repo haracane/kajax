@@ -23,7 +23,7 @@ module KeywordAliasUtil
   end
   
   def self.normalize_text(keyword)
-    keyword = keyword.tr('０-９ａ-ｚＡ-Ｚ', '0-9a-zA-Z').tr('！＃＄％＆＝～｜＾￥＠＋＊；：＜＞？＿、。／', '!#$%&=~|^\\\\@+*;:<>?_,./')
+    keyword = keyword.tr('０-９ａ-ｚＡ-Ｚ', '0-9a-zA-Z').tr('！＃＄％＆＝～｜＾￥＠＋＊；：＜＞？＿、。／－', '!#$%&=~|^\\\\@+*;:<>?_,./-')
     keyword = keyword.gsub(/[（｛「{\[]/, '(').gsub(/[）｝」}\]]/, ')').gsub(/[\s　]/, '').gsub(/[”’‘“"'`]/, "'").downcase
     #.gsub(/[ー－‐]/, '-')
     keyword = self.filter(keyword, @@hankaku_kana, @@zenkaku_kana)
