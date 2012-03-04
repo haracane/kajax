@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kenji Hara"]
-  s.date = %q{2012-03-03}
+  s.date = %q{2012-03-04}
   s.description = %q{ruby extensions for kick start}
-  s.email = %q{hara2001@gmail.com}
+  s.email = %q{hara@mail.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "kajax.gemspec",
     "lib/action_controller_extensions.rb",
     "lib/action_controller_extensions/read_params.rb",
     "lib/action_view_extensions.rb",
@@ -70,6 +71,7 @@ Gem::Specification.new do |s|
     "lib/twitter_thumbnail_extractor.rb",
     "lib/url_util.rb",
     "spec/kajax_spec.rb",
+    "spec/keyword_alias_util_spec.rb",
     "spec/spec_helper.rb"
   ]
   s.homepage = %q{http://github.com/haracane/kajax}
@@ -87,6 +89,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.3"])
       s.add_development_dependency(%q<rcov>, ["~> 1.0.0"])
+      s.add_development_dependency(%q<ci_reporter>, ["~> 1.7.0"])
       s.add_development_dependency(%q<actionpack>, ["~> 3.1.3"])
       s.add_development_dependency(%q<activerecord>, ["~> 3.1.3"])
       s.add_development_dependency(%q<bunny>, [">= 0.7.9"])
@@ -96,6 +99,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.8.3"])
       s.add_dependency(%q<rcov>, ["~> 1.0.0"])
+      s.add_dependency(%q<ci_reporter>, ["~> 1.7.0"])
       s.add_dependency(%q<actionpack>, ["~> 3.1.3"])
       s.add_dependency(%q<activerecord>, ["~> 3.1.3"])
       s.add_dependency(%q<bunny>, [">= 0.7.9"])
@@ -106,6 +110,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.8.3"])
     s.add_dependency(%q<rcov>, ["~> 1.0.0"])
+    s.add_dependency(%q<ci_reporter>, ["~> 1.7.0"])
     s.add_dependency(%q<actionpack>, ["~> 3.1.3"])
     s.add_dependency(%q<activerecord>, ["~> 3.1.3"])
     s.add_dependency(%q<bunny>, [">= 0.7.9"])
