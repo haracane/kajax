@@ -18,6 +18,9 @@ module ActiveRecordExtensions
     end
     
     module ClassMethods
+      def force_find(*args)
+        uncached { find(*args) }
+      end
     end
   end
 end
